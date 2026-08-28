@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+:root { --ink:#17372f; --forest:#173f35; --moss:#789172; --cream:#f4f0e7; --paper:#fbfaf6; --line:#d9d8cd; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-geist), Arial, sans-serif; }
+a { color:inherit; text-decoration:none; }
+.site-header { position:absolute; inset:0 0 auto; z-index:10; height:92px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 clamp(24px,4vw,72px); color:white; border-bottom:1px solid rgb(255 255 255 / .3); }
+.brand { display:flex; align-items:center; gap:12px; justify-self:start; }
+.brand-mark { display:grid; place-items:center; width:38px; height:44px; border:1px solid rgb(255 255 255 / .8); border-radius:50% 50% 44% 44%; font-family:Georgia,serif; font-size:22px; }
+.brand strong,.brand small { display:block; }
+.brand strong { font-family:Georgia,serif; font-size:17px; font-weight:500; }
+.brand small { margin-top:2px; font-size:10px; letter-spacing:.22em; text-transform:uppercase; opacity:.75; }
+nav { display:flex; gap:34px; font-size:13px; }
+nav a { padding:8px 0; }
+.header-contact { justify-self:end; padding:12px 18px; border:1px solid rgb(255 255 255 / .65); border-radius:999px; font-size:13px; }
+.hero { position:relative; min-height:790px; height:92vh; color:white; overflow:hidden; }
+.hero-photo { position:absolute; inset:0; background-image:url('https://media.fastighetsbyran.se/46617079.jpg'); background-size:cover; background-position:center 48%; transform:scale(1.015); }
+.hero-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,35,27,.76) 0%,rgba(8,34,27,.28) 55%,rgba(8,30,24,.16)),linear-gradient(0deg,rgba(8,30,24,.5),transparent 48%); }
+.hero-content { position:absolute; left:clamp(24px,8vw,136px); top:50%; max-width:720px; transform:translateY(-43%); }
+.eyebrow { margin:0 0 26px; font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--moss); }
+.eyebrow.light { color:#d7e2d2; }
+h1,h2 { margin:0; font-family:Georgia,'Times New Roman',serif; font-weight:400; letter-spacing:-.045em; }
+h1 { font-size:clamp(62px,8.1vw,128px); line-height:.84; }
+.hero-lead { max-width:510px; margin:34px 0 0; font-size:18px; line-height:1.6; color:rgb(255 255 255 / .86); }
+.hero-actions { display:flex; align-items:center; gap:30px; margin-top:38px; }
+.button { display:inline-flex; align-items:center; justify-content:space-between; gap:26px; min-width:220px; padding:16px 20px; border-radius:999px; font-size:13px; font-weight:650; }
+.button.primary { background:#eef0d8; color:var(--forest); }
+.text-link { display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:600; }
+.light-link { color:white; }
+.hero-facts { position:absolute; right:clamp(24px,5vw,80px); bottom:50px; display:flex; gap:44px; padding:20px 0 0 32px; border-left:1px solid rgb(255 255 255 / .4); }
+.hero-facts div { min-width:74px; }
+.hero-facts strong,.hero-facts span { display:block; }
+.hero-facts strong { font-family:Georgia,serif; font-size:30px; font-weight:400; }
+.hero-facts span { margin-top:5px; font-size:10px; letter-spacing:.13em; text-transform:uppercase; opacity:.72; }
+.hero-credit,.photo-credit { position:absolute; z-index:2; right:18px; bottom:14px; padding:6px 9px; border-radius:3px; background:rgb(8 30 24 / .55); color:rgb(255 255 255 / .78); font-size:9px; letter-spacing:.04em; backdrop-filter:blur(4px); }
+.hero-credit { right:clamp(24px,5vw,80px); bottom:20px; }
+.intro { display:grid; grid-template-columns:1fr 2fr 1.1fr; gap:50px; padding:130px clamp(24px,8vw,136px); align-items:start; }
+.intro .eyebrow { margin-top:16px; }
+.intro h2 { font-size:clamp(50px,6vw,88px); line-height:.95; }
+.intro>p:last-child { margin:18px 0 0; font-size:16px; line-height:1.75; color:#5a6b63; }
+@media(max-width:900px){
+  .site-header { grid-template-columns:1fr auto; height:76px; } nav { display:none; } .brand strong { font-size:15px; }
+  .hero { min-height:720px; height:88vh; } .hero-content { top:48%; } .hero-facts { left:24px; right:auto; bottom:30px; gap:24px; padding-left:18px; }
+  .intro { grid-template-columns:1fr; gap:20px; padding-top:90px; padding-bottom:90px; } .intro .eyebrow { margin:0; } .intro>p:last-child { max-width:560px; }
+}
+@media(max-width:560px){ .header-contact { font-size:0; padding:12px; } .header-contact:after { content:'Kontakt'; font-size:12px; } h1 { font-size:60px; } .hero-lead { font-size:16px; } .hero-actions { align-items:flex-start; flex-direction:column; gap:20px; } .hero-facts { gap:18px; } .hero-facts strong { font-size:24px; } }
+
+/* Completed homes — imagery from the original Hasselbacken project page */
+.homes-grid { display:grid; grid-template-columns:1.08fr .92fr; min-height:760px; background:#e7e9df; }
+.homes-photo { position:relative; min-height:620px; background:url('https://media.fastighetsbyran.se/46617076.jpg') center/cover no-repeat; }
+.homes-copy { display:flex; flex-direction:column; justify-content:center; padding:90px clamp(32px,7vw,110px); }
+.homes-copy h2,.section-head h2,.lake-copy h2,.documents-preview h2,.broker-cta h2,.footer-main h2,.content-block h2,.archive-intro h2,.missing-docs h2 { font-size:clamp(48px,5.2vw,78px); line-height:.96; }
+.homes-copy>p:not(.eyebrow) { max-width:570px; margin:30px 0 40px; color:#556961; line-height:1.75; }
+.type-list { border-top:1px solid #bdc6bb; }
+.type-list>div { display:grid; grid-template-columns:44px 100px 1fr; gap:18px; align-items:center; padding:22px 0; border-bottom:1px solid #bdc6bb; }
+.type-list span { font-size:11px; color:#809083; }.type-list strong { font-family:Georgia,serif; font-size:20px; font-weight:400; }.type-list p { margin:0; color:#63756e; font-size:13px; line-height:1.5; }
+
+.living,.documents-preview { padding:130px clamp(24px,8vw,136px); }
+.section-head { display:grid; grid-template-columns:1.4fr .75fr; gap:80px; align-items:end; margin-bottom:70px; }
+.section-head>p { margin:0 0 5px; max-width:520px; color:#5c6f68; line-height:1.75; }
+.link-cards { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.link-cards article { display:flex; flex-direction:column; min-height:340px; padding:32px; border-right:1px solid var(--line); }.link-cards article:last-child{border-right:0}.card-no{font-size:11px;color:#89958e}.link-cards h3{margin:55px 0 18px;font-family:Georgia,serif;font-size:30px;font-weight:400}.link-cards p{margin:0;color:#64736d;line-height:1.7;font-size:14px}.link-cards a,.card-tag{margin-top:auto;padding-top:28px;font-size:12px;font-weight:650}.card-tag{color:#61745f}.card-tag.pending{color:#9a6f3c}
+
+.lake-section { min-height:670px; display:grid; grid-template-columns:1.35fr .65fr; align-items:end; gap:70px; padding:100px clamp(24px,8vw,136px); color:white; background:linear-gradient(90deg,rgba(10,41,33,.88),rgba(10,42,34,.42)),url('https://mp1.skm.quedro.com/eaimages/74/3801f-f2f59-fdcab-08c4b-8aec0-39141-c8115-fb275/c4c16-de7d9-42f2f-3f9e4-3299b-74f41-d95ea-51eb2.jpg?width=2000') center/cover no-repeat; }
+.lake-copy p:last-child { max-width:500px; margin:30px 0 0; color:rgb(255 255 255/.78); line-height:1.7; }.area-list{border-top:1px solid rgb(255 255 255/.45)}.area-list div{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:23px 0;border-bottom:1px solid rgb(255 255 255/.35)}.area-list strong{font-family:Georgia,serif;font-size:22px;font-weight:400}.area-list span{font-size:13px;line-height:1.5;color:rgb(255 255 255/.72)}
+
+.documents-preview { background:var(--cream); }.section-head.compact{margin-bottom:60px}.document-list{border-top:1px solid #cbcbbf}.document-list a{display:grid;grid-template-columns:54px 1fr auto;gap:20px;align-items:center;padding:22px 4px;border-bottom:1px solid #cbcbbf}.doc-icon{display:grid;place-items:center;width:44px;height:52px;border:1px solid #9eaaa2;border-radius:2px;font-size:9px;font-weight:750;letter-spacing:.08em}.document-list strong,.document-list small{display:block}.document-list strong{font-family:Georgia,serif;font-size:22px;font-weight:400}.document-list small{margin-top:5px;color:#7b857f}.document-list b{font-size:18px;font-weight:400}.documents-actions{display:flex;align-items:center;gap:35px;margin-top:38px}.button.outline{border:1px solid #71847b}
+
+.broker-cta { padding:125px clamp(24px,8vw,136px); text-align:center; color:white; background:var(--forest); }.broker-cta .button{margin-top:42px}.broker-cta .eyebrow{color:#aec2b4}
+footer { color:white; background:#102f28; }.footer-main{display:grid;grid-template-columns:1.4fr .6fr;gap:80px;padding:110px clamp(24px,8vw,136px)}.footer-contact{padding-top:40px}.footer-contact>p:first-child{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:#aabbb4}.footer-contact address{font-style:normal;font-family:Georgia,serif;font-size:22px;line-height:1.55}.contact-note{max-width:360px;margin-top:28px;color:#9fb0aa;font-size:12px;line-height:1.6}.footer-bottom{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:24px clamp(24px,4vw,72px);border-top:1px solid rgb(255 255 255/.18);font-size:11px;color:#aabbb4}.footer-brand{display:flex;align-items:center;gap:10px;color:white;font-family:Georgia,serif;font-size:15px}.footer-brand .brand-mark{width:30px;height:34px;font-size:16px}.footer-bottom div{justify-self:end;display:flex;gap:28px}
+
+/* Inner pages */
+.site-header-inner{position:relative;background:var(--forest)}.page-hero{min-height:540px;display:grid;grid-template-columns:1.3fr .7fr;gap:80px;align-items:end;padding:100px clamp(24px,8vw,136px);color:white;background-color:#244c40;background-size:cover;background-position:center}.page-hero h1{font-size:clamp(62px,7vw,104px)}.page-hero>p{max-width:460px;margin:0 0 10px;color:rgb(255 255 255/.75);line-height:1.7}.broker-hero{background-image:linear-gradient(90deg,rgba(13,47,39,.9),rgba(13,47,39,.42)),url('https://media.fastighetsbyran.se/46617066.jpg')}.docs-hero{background-image:linear-gradient(90deg,rgba(13,47,39,.92),rgba(13,47,39,.45)),url('https://media.fastighetsbyran.se/46617053.jpg')}
+.verified-bar{display:flex;justify-content:space-between;gap:30px;padding:17px clamp(24px,8vw,136px);background:#e8eadb;font-size:11px;color:#51665b}.verified-bar span:last-child{text-align:right}
+.broker-content{display:grid;grid-template-columns:220px 1fr;gap:80px;padding:110px clamp(24px,8vw,136px)}.side-index{position:sticky;top:28px;align-self:start;display:flex;flex-direction:column;gap:15px;padding-left:18px;border-left:1px solid #bfc7c1;font-size:12px}.side-index p{margin:0 0 7px;color:#829087;text-transform:uppercase;letter-spacing:.13em}.side-index a{font-weight:600}.content-block{padding-bottom:100px}.content-block h2{margin-bottom:48px}.fact-table{border-top:1px solid var(--line)}.fact-table>div{display:grid;grid-template-columns:220px 1fr;gap:40px;padding:19px 0;border-bottom:1px solid var(--line)}.fact-table span{color:#79857e;font-size:12px}.fact-table strong{font-size:14px;font-weight:600}.faq-list{border-top:1px solid var(--line)}.faq-list details{border-bottom:1px solid var(--line)}.faq-list summary{display:flex;justify-content:space-between;align-items:center;padding:23px 0;cursor:pointer;list-style:none;font-family:Georgia,serif;font-size:23px}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary span{font-family:Arial,sans-serif;font-size:22px;font-weight:300}.faq-list details[open] summary span{transform:rotate(45deg)}.faq-list details p{max-width:740px;margin:0;padding:0 0 25px;color:#5c6c65;line-height:1.75}.broker-docs{border-top:1px solid var(--line);margin-bottom:30px}.broker-docs a{display:flex;justify-content:space-between;align-items:center;padding:21px 0;border-bottom:1px solid var(--line)}.broker-docs span{font-family:Georgia,serif;font-size:21px}.broker-docs b{font-size:11px;letter-spacing:.08em}.confirm-box{display:grid;grid-template-columns:58px 1fr;gap:25px;padding:34px;background:#efe9dc;border-left:3px solid #a87942}.confirm-mark{display:grid;place-items:center;width:44px;height:44px;border:1px solid #a87942;border-radius:50%;font-family:Georgia,serif;font-size:22px;color:#8a622f}.confirm-box h3{margin:1px 0 10px;font-family:Georgia,serif;font-size:24px;font-weight:400}.confirm-box p{margin:0;color:#6f6659;line-height:1.7}
+
+.archive-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:100px;align-items:end;padding:110px clamp(24px,8vw,136px)}.archive-intro>p{margin:0 0 8px;color:#66756e;line-height:1.75}.archive-groups{padding:0 clamp(24px,8vw,136px) 120px}.archive-group{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px;padding:55px 0;border-top:1px solid var(--line)}.archive-title{display:grid;grid-template-columns:45px 1fr;gap:20px}.archive-title>span{font-size:11px;color:#88958e}.archive-title h3{margin:0;font-family:Georgia,serif;font-size:31px;font-weight:400}.archive-title p{color:#6d7b74;font-size:13px;line-height:1.6}.archive-files a{display:grid;grid-template-columns:54px 1fr auto;gap:20px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line)}.archive-files strong,.archive-files small{display:block}.archive-files strong{font-family:Georgia,serif;font-size:20px;font-weight:400}.archive-files small{margin-top:4px;color:#7a857f}.archive-files b{font-size:11px}.missing-docs{padding:100px clamp(24px,8vw,136px);background:#e7e9df}.missing-docs>div{display:flex;flex-wrap:wrap;gap:12px;margin-top:45px}.missing-docs span{padding:13px 17px;border:1px solid #aeb9b0;border-radius:999px;font-size:12px}
+
+@media(max-width:980px){
+  .homes-grid{grid-template-columns:1fr}.homes-photo{min-height:560px}.section-head,.lake-section,.page-hero,.archive-intro{grid-template-columns:1fr}.link-cards{grid-template-columns:1fr}.link-cards article{min-height:260px;border-right:0;border-bottom:1px solid var(--line)}.link-cards article:last-child{border-bottom:0}.lake-section{align-items:end}.broker-content{grid-template-columns:1fr}.side-index{display:none}.archive-group{grid-template-columns:1fr;gap:25px}.footer-main{grid-template-columns:1fr}.footer-contact{padding-top:0}
+}
+@media(max-width:700px){
+  .site-header{padding-left:18px;padding-right:18px}.site-header nav{display:flex;justify-self:end;gap:14px}.site-header nav a{display:none}.site-header nav a:nth-last-child(-n+2){display:block}.header-contact{display:none}.hero-content{left:20px;right:20px}.intro,.living,.documents-preview{padding-left:22px;padding-right:22px}.homes-copy{padding:75px 22px}.homes-photo{min-height:420px}.type-list>div{grid-template-columns:34px 80px 1fr}.section-head{gap:25px;margin-bottom:48px}.lake-section{padding-left:22px;padding-right:22px}.documents-actions{align-items:flex-start;flex-direction:column}.footer-main{padding-left:22px;padding-right:22px}.footer-bottom{grid-template-columns:1fr;gap:18px}.footer-bottom>span{display:none}.footer-bottom div{justify-self:start}.page-hero{min-height:500px;padding:80px 22px 55px;gap:30px}.verified-bar{flex-direction:column;padding-left:22px;padding-right:22px}.verified-bar span:last-child{text-align:left}.broker-content,.archive-intro,.archive-groups,.missing-docs{padding-left:22px;padding-right:22px}.fact-table>div{grid-template-columns:1fr;gap:6px}.confirm-box{grid-template-columns:1fr}.archive-files a{grid-template-columns:48px 1fr}.archive-files a b{display:none}.archive-group{padding:40px 0}.document-list a{grid-template-columns:48px 1fr}.document-list a>b{display:none}
+}
